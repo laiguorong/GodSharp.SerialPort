@@ -6,18 +6,18 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Title>GodSharp.SerialPort</Title>
-    <PackageId>GodSharp.SerialPort</PackageId>
+    <PackageId>RongInfo.GodSerialPort</PackageId>
     <PackageTags>GodSharp,GodSharp.SerialPort,SerialPort</PackageTags>
     <Company>GodSharp</Company>
     <Authors>seayxu</Authors>
     <Description>An easy-to-use .NET SerialPort Library.</Description>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/godsharp/GodSharp.SerialPort.git</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/godsharp/GodSharp.SerialPort</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/laiguorong/GodSharp.SerialPort.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/laiguorong/GodSharp.SerialPort</PackageProjectUrl>
     <Copyright>Copyright © GodSharp 2017</Copyright>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/26563296</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/godsharp/GodSharp.SerialPort/blob/master/LICENSE</PackageLicenseUrl>
-    <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">netstandard2.0;net47;net46;net45;net40;net35;</TargetFrameworks>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">netstandard2.0;net48;net46;net45;net40;net35;</TargetFrameworks>
     <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
     <ApplicationIcon />
     <StartupObject />
@@ -34,8 +34,8 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='net46'">
     <DefineConstants>NFX;NET46;$(AdditionalConstants)</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)'=='net47'">
-    <DefineConstants>NFX;NET47;$(AdditionalConstants)</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net48'">
+    <DefineConstants>NFX;NET48;$(AdditionalConstants)</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <DefineConstants>CFX;NETSTANDARD2_0;$(AdditionalConstants)</DefineConstants>
@@ -43,6 +43,10 @@
   <PropertyGroup>
     <OutputPath>..\..\output\</OutputPath>
     <AssemblyVersion>1.2.0.6</AssemblyVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GodSharp.SerialPort.snk</AssemblyOriginatorKeyFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>GodSharp.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
     <Reference Include="System" />
@@ -56,10 +60,20 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net47'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.IO.Ports" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="GodSharp.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
